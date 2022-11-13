@@ -1,0 +1,273 @@
+{
+	"info": {
+		"_postman_id": "1cdf47a5-1142-4c3b-bf8e-c7161ba12ae4",
+		"name": "Урок 2.4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23701377"
+	},
+	"item": [
+		{
+			"name": "GET запрос для вывода всех комментариев",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gorest.co.in/public/v2/posts/13/comments",
+					"protocol": "https",
+					"host": [
+						"gorest",
+						"co",
+						"in"
+					],
+					"path": [
+						"public",
+						"v2",
+						"posts",
+						"13",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET запрос для одного комментария",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gorest.co.in/public/v2/comments?per_page=1",
+					"protocol": "https",
+					"host": [
+						"gorest",
+						"co",
+						"in"
+					],
+					"path": [
+						"public",
+						"v2",
+						"comments"
+					],
+					"query": [
+						{
+							"key": "per_page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST запрос для создания комментария",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "post_id",
+						"value": "1832",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 4714,\r\n    \"post_id\": 1775,\r\n    \"name\": \"Sergey N\",\r\n    \"email\": \"ayushati_menjjon@upton.name\",\r\n    \"body\": \"Hello, how are you?\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gorest.co.in/public/v2/comments",
+					"protocol": "https",
+					"host": [
+						"gorest",
+						"co",
+						"in"
+					],
+					"path": [
+						"public",
+						"v2",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT для изменения комментария",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2016,\r\n    \"post_id\": 1775,\r\n    \"name\": \"Sergey N\",\r\n    \"email\": \"ayushati_menjjon@upton.name\",\r\n    \"body\": \"Hello????????????????????????\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gorest.co.in/public/v2/comments/2016",
+					"protocol": "https",
+					"host": [
+						"gorest",
+						"co",
+						"in"
+					],
+					"path": [
+						"public",
+						"v2",
+						"comments",
+						"2016"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "|PATCH для изменения комментария",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"body\": \"Hi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gorest.co.in/public/v2/comments/2016",
+					"protocol": "https",
+					"host": [
+						"gorest",
+						"co",
+						"in"
+					],
+					"path": [
+						"public",
+						"v2",
+						"comments",
+						"2016"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE для удаления комментария",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://gorest.co.in/public/v2/comments/2016",
+					"protocol": "https",
+					"host": [
+						"gorest",
+						"co",
+						"in"
+					],
+					"path": [
+						"public",
+						"v2",
+						"comments",
+						"2016"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET запрос для фильтрации комментария по  определенному посту через Nested Resources",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gorest.co.in/public/v2/posts/1775/comments",
+					"protocol": "https",
+					"host": [
+						"gorest",
+						"co",
+						"in"
+					],
+					"path": [
+						"public",
+						"v2",
+						"posts",
+						"1775",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST запрос для создания комментария к  определенному посту через Nested Resources",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n    \"id\": 4714,\r\n    \"post_id\": 1775,\r\n    \"name\": \"Sergey N\",\r\n    \"email\": \"ayushati_menjjon@upton.name\",\r\n    \"body\": \"Hello, how are you?\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gorest.co.in/public/v2/posts/1775/comments",
+					"protocol": "https",
+					"host": [
+						"gorest",
+						"co",
+						"in"
+					],
+					"path": [
+						"public",
+						"v2",
+						"posts",
+						"1775",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "b9d2132fc0b9323e9e7a16660c04448a5fe9089da388a99c23e509f66563b224",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
